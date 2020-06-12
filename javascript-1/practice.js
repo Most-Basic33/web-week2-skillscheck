@@ -116,10 +116,10 @@ let arrayReverser = (arr) => {
 	for (let i = arr.length - 1; i >= 0; i--) {
 		reversed.push(arr[i]);
 	}
-	console.log(reversed);
+	//	console.log(reversed);
 	return reversed;
 }
-arrayReverser(test);
+//arrayReverser(test);
 
 //////////////////PROBLEM 14 - 18 Setup////////////////////
 
@@ -134,22 +134,27 @@ const myNumbers = [3, 55, 788, 2, 1]
 // Code Here
 const doubled = myNumbers.map(num => num * 2)
 //////////////////PROBLEM 15////////////////////
-console.log(doubled);
+//console.log(doubled);
 // Now, use .filter to create a new array containing any numbers that are greater than 100. Call the new array 'filtered'. 
 
 // Code Here
-const filtered = doubled.filter(num => num > 100)
-console.log(filtered);
+const filtered = myNumbers.filter(num => num > 100)
+//console.log(filtered);
 //////////////////PROBLEM 16////////////////////
 
 // Next, use reduce to get the total of the numbers in the array summed together. Store the total in a new variable named 'total'. 
 
 // Code Here
-
+const total = myNumbers.reduce((a, b) => a + b)
 //////////////////PROBLEM 17////////////////////
 
 // Finally, use .forEach to find the index of each item in the array. To begin, create an empty array called 'myNumbersIndex'. Then, use forEach to push each item's index from the myNumbers array into the newly created myNumbersIndex array. 
-
+const myNumbersIndex = [];
+console.log(myNumbers)
+myNumbers.forEach((value, index) => {
+	myNumbersIndex.push(index);
+})
+console.log(myNumbersIndex);
 // Code Here
 
 //////////////////PROBLEM 18////////////////////
@@ -158,7 +163,7 @@ console.log(filtered);
 const notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
 
 // Code Here
-
+let forTheLoveOfGeorge = notGeorge.map(name => name = 'George');
 //////////////////PROBLEM 19////////////////////
 
 // Using the people array, filter out everyone that isn't a friend into a new array called 'enemies'. Use .filter(). 
@@ -172,9 +177,13 @@ const people = [
 ]
 
 // Code Here
-
+const enemies = people.filter(obj => obj.friend == false);
 //////////////////PROBLEM 20////////////////////
 
 // Using the people array above, get a total of the awesomeLevel from all the people, and store that value in a variable named 'totallyAwesome'. Use .reduce().
 
 // Code Here
+const totallyAwesome = people.reduce((a, b) => {
+	return a + b.awesomeLevel;
+}, 0)
+console.log(totallyAwesome);
